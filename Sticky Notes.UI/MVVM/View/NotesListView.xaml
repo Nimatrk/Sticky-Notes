@@ -111,8 +111,7 @@
                                                         BorderBrush="{TemplateBinding BorderBrush}"
                                                         BorderThickness="{TemplateBinding BorderThickness}">
                                                     <ContentPresenter Content="{TemplateBinding Content}"
-                                                                      HorizontalAlignment="Center"
-                                                                      VerticalAlignment="Center"/>
+                                                                      HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                                 </Border>
                                                 <ControlTemplate.Triggers>
                                                     <Trigger Property="IsMouseOver" Value="True">
@@ -148,8 +147,7 @@
                                                         BorderBrush="{TemplateBinding BorderBrush}"
                                                         BorderThickness="{TemplateBinding BorderThickness}">
                                                     <ContentPresenter Content="{TemplateBinding Content}"
-                                                                      HorizontalAlignment="Center"
-                                                                      VerticalAlignment="Center"/>
+                                                                      HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                                 </Border>
                                                 <ControlTemplate.Triggers>
                                                     <Trigger Property="IsMouseOver" Value="True">
@@ -168,9 +166,7 @@
                 <ListView Grid.Row="4"
                           ItemsSource="{Binding Notes,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                           SelectedItem="{Binding SelectedNote, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                          Background="Transparent"
-                          BorderBrush="Transparent"
-                          BorderThickness="0">
+                          Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <EventSetter Event="MouseDoubleClick" Handler="ListViewItem_MouseDoubleClick"/>
@@ -183,18 +179,26 @@
                                                 <RowDefinition/>
                                             </Grid.RowDefinitions>
                                             
-                                            <Border Background="#64bf59"
-                                                    CornerRadius="8 8 0 0"/>
-                                            <Border Grid.Row="1"
-                                                    Background="#333333"
-                                                    MinHeight="40"
-                                                    MaxWidth="297">
-                                                <TextBox Text="{Binding Note.Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                                                         Background="Transparent" Foreground="#eeeeee"
-                                                         BorderBrush="Transparent" BorderThickness="0"
-                                                         TextWrapping="Wrap" AcceptsReturn="True"
-                                                         IsHitTestVisible="False" Focusable="False"
-                                                         MaxLines="5" Margin="5"/>
+                                            <Border Background="#64bf59" CornerRadius="8 8 0 0"/>
+                                            <Border Grid.Row="1" Background="#333333" MinHeight="40" MaxWidth="297">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <TextBlock Text="{Binding Note.CreationDateTime, StringFormat='{}{0:MM/dd/yyyy a\\t h:mm tt}'}"
+                                                               Foreground="#78d56c" HorizontalAlignment="Right" Margin="0 5 5 0"/>
+
+                                                    <TextBox x:Name="noteText"
+                                                             Grid.Row="1" Text="{Binding Note.Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                                             Background="Transparent" Foreground="#eeeeee"
+                                                             BorderBrush="Transparent" BorderThickness="0"
+                                                             TextWrapping="Wrap" AcceptsReturn="True"
+                                                             IsHitTestVisible="False" Focusable="False"
+                                                             MaxLines="5" Margin="5">
+                                                    </TextBox>
+                                                </Grid>
                                             </Border>
                                         </Grid>
                                         <ControlTemplate.Triggers>

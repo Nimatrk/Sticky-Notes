@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sticky_Notes.UI.MVVM.View"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="NoteView" Height="320" Width="320"
         WindowStyle="None"
@@ -133,17 +134,22 @@
             </Border>
 
             <TextBox Grid.Row="1"
-                     Text="{Binding Note.Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                     Foreground="#eeeeee"
-                     CaretBrush="#eeeeee"
-                     Background="Transparent"
-                     BorderBrush="Transparent"
-                     BorderThickness="0"
-                     VerticalScrollBarVisibility="Auto"
-                     TextWrapping="Wrap"
-                     AcceptsReturn="True"
-                     FontSize="13"
-                     Margin="5 5 1 5"/>
+                     Text="{Binding Note.Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="Foreground" Value="#EEEEEE"/>
+                        <Setter Property="CaretBrush" Value="#EEEEEE"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="FontSize" Value="13"/>
+                        <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+                        <Setter Property="TextWrapping" Value="Wrap"/>
+                        <Setter Property="AcceptsReturn" Value="True"/>
+                        <Setter Property="Margin" Value="5"/>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
 
             <Border Grid.Row="2" 
                     BorderBrush="LightSlateGray"
