@@ -1,0 +1,22 @@
+﻿<Application x:Class="Sticky_Notes.UI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Sticky_Notes.UI"
+             xmlns:view="clr-namespace:Sticky_Notes.UI.MVVM.View"
+             xmlns:viewmodel="clr-namespace:Sticky_Notes.UI.MVVM.ViewModel">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./CustomControls/WindowButton.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate DataType="{x:Type TypeName=viewmodel:NotesListViewModel}">
+                <view:NotesListView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type TypeName=viewmodel:SettingsViewModel}">
+                <view:SettingsView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
