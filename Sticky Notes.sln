@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35431.28
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sticky Notes.UI", "Sticky Notes.UI\Sticky Notes.UI.csproj", "{BD736DE1-C20D-4D08-A74C-BFD1D42C60CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sticky Notes.DataBase", "Sticky Notes.DataBase\Sticky Notes.DataBase.csproj", "{2FF8D8BF-BDD7-472A-A489-7E3E044B8949}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BD736DE1-C20D-4D08-A74C-BFD1D42C60CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD736DE1-C20D-4D08-A74C-BFD1D42C60CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD736DE1-C20D-4D08-A74C-BFD1D42C60CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FF8D8BF-BDD7-472A-A489-7E3E044B8949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FF8D8BF-BDD7-472A-A489-7E3E044B8949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FF8D8BF-BDD7-472A-A489-7E3E044B8949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FF8D8BF-BDD7-472A-A489-7E3E044B8949}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
